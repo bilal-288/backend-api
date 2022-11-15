@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 class ProductController extends Controller
 {
+    /**
+     * I will add the products in product table
+     */
     public function addProduct(Request $req)
     {
         $product = new Product();
@@ -18,4 +21,14 @@ class ProductController extends Controller
 
         return $product;
     }
+
+    /**
+     * I will show the products
+     */
+
+     public function list()
+     {
+        return Product::all();
+     }
+
 }
